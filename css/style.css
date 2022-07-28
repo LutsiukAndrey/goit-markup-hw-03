@@ -64,7 +64,6 @@ p {
 .header {
   background-color: var(--bcg-color);
   border-bottom: 1px solid #ececec;
-  margin-bottom: 21px;
 }
 .header-section {
   display: flex;
