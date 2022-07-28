@@ -25,6 +25,9 @@ body {
 .link {
   text-decoration: none;
 }
+img {
+  display: block;
+}
 h1,
 h2,
 h3,
@@ -44,21 +47,24 @@ p {
   margin-top: 0;
   padding: 0;
 }
-.section {
-  width: 1200px;
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
 
   margin-left: auto;
   margin-right: auto;
-
+}
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 /* Хедер*/
 
 .header {
   background-color: var(--bcg-color);
-border-bottom: 1px solid #ECECEC;
-margin-bottom: 21px;
-
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 21px;
 }
 .header-section {
   display: flex;
@@ -66,6 +72,7 @@ margin-bottom: 21px;
   align-items: baseline;
   padding-top: 25px;
   padding-bottom: 25px;
+  flex-wrap: wrap;
 }
 .header-nav {
   display: flex;
@@ -74,21 +81,19 @@ margin-bottom: 21px;
 }
 .site-nav {
   display: flex;
+  flex-wrap: wrap;
 }
 .contact-nav {
   display: flex;
 }
-.site-nav .item {
+.site-nav .item:not(:last-child) {
   margin-right: 50px;
 }
-.contact-nav .item {
+.contact-nav .item:not(:last-child) {
   margin-right: 50px;
 }
-.contact-nav .item:last-child {
-  margin-right: 0;
-}
+
 .contact-nav {
-  margin-left: auto;
 }
 .logo-header {
   color: var(--logo-header);
@@ -151,7 +156,7 @@ margin-bottom: 21px;
   margin-right: auto;
   margin-bottom: 30px;
 }
-.hero-container{
+.hero-container {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -190,18 +195,19 @@ margin-bottom: 21px;
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-.ben-section {
+.benefit {
   padding-top: 67px;
-  padding-bottom: 67px;
-  
+}
+.ben-section {
 }
 .ben-list-item {
   display: flex;
-  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 .ben-list-block {
-  width: 270px;
+  max-width: 270px;
+  /* width:  calc((100% - 90px) / 4); */
 }
 
 .benefit-title {
@@ -214,49 +220,55 @@ margin-bottom: 21px;
 }
 
 /* Чем мы занимааемся */
+.ocupation {
+  padding-top: 0px;
+}
 .section-title {
   color: var(--title-text-color);
 
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
+  margin-bottom: 50px;
+}
+.ocup-list {
+  /* width: calc((100% - 60px) / 3); */
+  max-width: 370px;
 }
 .ocup-block {
   display: flex;
-  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
 }
-.ocup-title {
-  margin-bottom: 50px;
-}
+
 .ocupation {
-  padding-bottom: 94px;
 }
 /* команда */
 .team-section {
-
+  background-color: var(--btn-bcg);
 }
 .team-contanier {
-  padding-top: 94px;
-  padding-bottom: 94px;
-  padding-top: 0;
 }
-.team-title {
-  margin-bottom: 50px;
-}
+
 .team-list {
   display: flex;
-  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 .team-block {
-  width: 270px;
- 
+  max-width: 270px;
+  /* width: calc((100% - 90px) / 4); */
+  background-color: var(--bcg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .teammate-photo {
-
 }
-.teammate-text-wraper{
-  padding: 30px auto;
-  
+.teammate-text-wraper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
 }
 .teammate-name {
   color: var(--title-text-color);
@@ -269,13 +281,11 @@ margin-bottom: 21px;
 .teammate-occupation {
   font-size: 16px;
   line-height: 1.18;
-  margin-bottom: 30px;
 }
 
 /* Потфолио */
 
 .portfolio-page {
-  padding: 94px 0;
 }
 
 .portfolio-button {
@@ -285,6 +295,7 @@ margin-bottom: 21px;
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  flex-wrap: wrap;
 }
 
 .filter-button {
@@ -301,10 +312,8 @@ margin-bottom: 21px;
   padding: 6px 22px;
 
   border-radius: 4px;
- 
 }
-.btn-list:not(:last-child)
-{
+.btn-list:not(:last-child) {
   margin-right: 8px;
 }
 
@@ -320,10 +329,15 @@ margin-bottom: 21px;
   font-size: 18px;
   line-height: 2;
 }
-.portfolio-list{
+.portfolio-list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+.portfolio-text-wraper {
+  padding: 20px 24px;
+  border: 1px solid #eeeeee;
+  border-top: none;
 }
 
 .portfolio-text {
@@ -355,11 +369,10 @@ margin-bottom: 21px;
   margin-bottom: 20px;
 }
 .adress-list {
-
   margin-bottom: 8px;
   display: block;
 }
-.adress-list:nth-child(3){
+.adress-list:nth-child(3) {
   margin-bottom: 0;
 }
 
@@ -383,10 +396,8 @@ margin-bottom: 21px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
-  color: var(--footer-contacts);}
-
-
-
+  color: var(--footer-contacts);
+}
 
 .adress-list .link:focus,
 .adress-list .link:hover {
